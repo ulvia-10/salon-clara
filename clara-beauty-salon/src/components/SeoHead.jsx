@@ -6,7 +6,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`
 export default function SeoHead({
   title = 'Clara Beauty Salon - Sulam Alis, Facial & Salon Profesional Malang',
   description = 'Clara Beauty Salon menawarkan layanan sulam alis microblading, facial brightening, perawatan rambut, dan manicure profesional di Malang.',
-  keywords = 'sulam alis jakarta, facial jakarta, salon kecantikan jakarta, microblading, clara beauty salon',
+  keywords = 'sulam alis malang, facial malang, salon kecantikan malang, microblading, clara beauty salon',
   image = DEFAULT_IMAGE,
   path = '',
   type = 'website',

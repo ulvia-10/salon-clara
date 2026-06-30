@@ -17,7 +17,7 @@ export default function Services() {
       <SeoHead
         title="Layanan Clara Beauty Salon - Sulam Alis, Facial, Rambut & Kuku"
         description="Temukan semua layanan kecantikan Clara Beauty Salon: sulam alis microblading, facial brightening & anti-aging, potong rambut, keratin, manicure, pedicure di Malang."
-        keywords="layanan sulam alis jakarta, facial jakarta, potong rambut jakarta, keratin jakarta, manicure jakarta"
+        keywords="layanan sulam alis malang, facial malang, potong rambut malang, keratin malang, manicure malang"
         path="/layanan"
       />
 

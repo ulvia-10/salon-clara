@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/clara-beauty-salon/dist/index.html"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+import { Link } from '@tanstack/react-router'
+import { Star, ArrowRight, Award, Clock, Heart, Shield } from 'lucide-react'
+import SeoHead from '../components/SeoHead'
+import ServiceCard from '../components/ServiceCard'
+import TestimonialCard from '../components/TestimonialCard'
+import { SERVICES, TESTIMONIALS, SALON_INFO } from '../data/constants'
+import { openWhatsApp } from '../lib/utils'
+
+const POPULAR_SERVICES = SERVICES.filter((s) => s.popular)
+const FEATURED_TESTIMONIALS = TESTIMONIALS.slice(0, 3)
+
+const STATS = [
+  { value: '5000+', label: 'Pelanggan Puas', icon: Heart },
+  { value: '4.9/5', label: 'Rating Google', icon: Star },
+  { value: '8 Tahun', label: 'Pengalaman', icon: Award },
+  { value: '10+', label: 'Terapis Expert', icon: Shield },
+]
+
+const WHY_US = [
+  {
+    emoji: '🎓',
+    title: 'Terapis Bersertifikat',
+    desc: 'Semua terapis berpengalaman dan tersertifikasi dari lembaga kecantikan terpercaya.',
+  },
+  {
+    emoji: '🌿',
+    title: 'Bahan Premium & Aman',
+    desc: 'Menggunakan bahan-bahan pilihan yang aman, telah teruji dan tersertifikasi BPOM.',
+  },
+  {
+    emoji: '✨',
+    title: 'Hasil Terjamin',
+    desc: 'Garansi kepuasan. Jika tidak puas, kami siap konsultasikan solusi terbaik.',
+  },
+  {
+    emoji: '💕',
+    title: 'Suasana Nyaman',
+    desc: 'Ruangan bersih, private, dan nyaman agar kamu rileks selama perawatan.',
+  },
+]
+
+export default function Home() {
+  return (
+    <>
+      <SeoHead
+        title="Clara Beauty Salon - Sulam Alis, Facial & Salon Profesional di Malang"
+        description="Clara Beauty Salon menawarkan layanan sulam alis microblading, facial brightening, dan salon lengkap di Malang. Terapis berpengalaman, hasil sempurna, harga terjangkau."
+        path="/"
+      />
+
+      {/* ─── Hero ─── */}
+      <section className="pt-28 pb-16 bg-hero-gradient relative overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-clara-200/30 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-clara-100/40 blur-3xl pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-block bg-clara-100 text-clara-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide">
+              ✨ Salon Kecantikan Terpercaya Malang
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-clara-900 leading-tight mb-5">
+              Cantik Alami,{' '}
+              <span className="text-clara-500">Sempurna</span>{' '}
+              Setiap Saat
+            </h1>
+            <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+              Percayakan kecantikanmu pada Clara Beauty Salon. Sulam alis microblading, facial brightening, perawatan rambut, dan manicure — semua dalam satu tempat.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={() => openWhatsApp('Halo Clara Beauty! Saya ingin booking treatment. Apa ada slot tersedia?')}
+                className="btn-whatsapp text-base px-8 py-3.5"
+              >
+                <span className="text-xl">💬</span>
+                Booking via WhatsApp
+              </button>
+              <Link to="/layanan" className="btn-outline text-base px-8 py-3.5">
+                Lihat Semua Layanan
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Stats ─── */}
+      <section className="py-12 bg-white border-b border-clara-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl md:text-3xl font-semibold text-clara-700 mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-sm text-gray-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Popular Services ─── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="section-title">Layanan Unggulan</h2>
+          <p className="section-subtitle">
+            Perawatan kecantikan terpopuler yang dipilih ribuan pelanggan setia kami
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {POPULAR_SERVICES.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/layanan" className="btn-outline">
+              Lihat Semua Layanan
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Why Us ─── */}
+      <section className="py-16 bg-section-gradient">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="section-title">Mengapa Clara Beauty?</h2>
+          <p className="section-subtitle">
+            Kami berkomitmen memberikan layanan kecantikan terbaik dengan standar tertinggi
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {WHY_US.map((item) => (
+              <div key={item.title} className="card p-6 text-center">
+                <div className="text-4xl mb-3">{item.emoji}</div>
+                <h3 className="font-semibold text-clara-800 mb-2 text-sm">{item.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Testimonials ─── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="section-title">Kata Pelanggan Kami</h2>
+          <p className="section-subtitle">
+            Lebih dari 5000 pelanggan telah merasakan manfaat perawatan di Clara Beauty Salon
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+            {FEATURED_TESTIMONIALS.map((t) => (
+              <TestimonialCard key={t.id} testimonial={t} />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/testimoni" className="btn-outline">
+              Baca Semua Testimoni
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA Banner ─── */}
+      <section className="py-16 bg-clara-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+            Siap Tampil Cantik & Percaya Diri?
+          </h2>
+          <p className="text-clara-200 mb-8 max-w-xl mx-auto">
+            Hubungi kami sekarang untuk konsultasi gratis dan booking jadwal perawatanmu.
+          </p>
+          <button
+            onClick={() => openWhatsApp('Halo Clara Beauty! Saya ingin konsultasi gratis dan booking treatment. Apa ada slot tersedia?')}
+            className="btn-whatsapp text-base px-8 py-4"
+          >
+            <span className="text-xl">💬</span>
+            Hubungi Kami di WhatsApp
+          </button>
+        </div>
+      </section>
+    </>
+  )
+}

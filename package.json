@@ -1,0 +1,7 @@
+{
+  "name": "salon-clara-root",
+  "private": true,
+  "scripts": {
+    "build": "cd clara-beauty-salon && npm install && npm run build"
+  }
+}

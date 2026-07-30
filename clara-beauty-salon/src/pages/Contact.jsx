@@ -59,7 +59,7 @@ export default function Contact() {
     <>
       <SeoHead
         title="Kontak & Booking Clara Beauty Salon Malang"
-        description="Hubungi Clara Beauty Salon untuk booking sulam alis, facial, dan perawatan lainnya. WhatsApp: 081234567890. Lokasi: Malang Selatan."
+        description="Hubungi Clara Beauty Salon untuk booking sulam alis, facial, dan perawatan lainnya. WhatsApp: 081553469549. Lokasi: Malang Selatan."
         path="/kontak"
       />
 

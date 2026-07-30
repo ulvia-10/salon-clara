@@ -1,8 +1,9 @@
 {
+  "outputDirectory": "clara-beauty-salon/dist",
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/clara-beauty-salon/dist/index.html"
+      "destination": "/index.html"
     }
   ]
 }

@@ -1,9 +1,9 @@
 export const SALON_INFO = {
   name: 'Clara Beauty Salon',
   tagline: 'Cantik Alami, Sempurna Setiap Saat',
-  phone: '081234567890',
-  whatsapp: '6281234567890',
-  email: 'hello@claraabeautysalon.com',
+  phone: '081553469549',
+  whatsapp: '081553469549',
+  email: '[EMAIL_ADDRESS]',
   address: 'Jl. Kecantikan No. 123, Malang Selatan',
   instagram: 'https://www.instagram.com/clarabeautysalon',
   maps: 'https://maps.google.com/?q=Clara+Beauty+Salon+Malang',

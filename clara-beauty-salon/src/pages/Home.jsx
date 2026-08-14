@@ -3,6 +3,7 @@ import { Star, ArrowRight, Award, Clock, Heart, Shield } from 'lucide-react'
 import SeoHead from '../components/SeoHead'
 import ServiceCard from '../components/ServiceCard'
 import TestimonialCard from '../components/TestimonialCard'
+import HeroCarousel from '../components/HeroCarousel'
 import { SERVICES, TESTIMONIALS, SALON_INFO } from '../data/constants'
 import { openWhatsApp } from '../lib/utils'
 
@@ -48,43 +49,10 @@ export default function Home() {
         path="/"
       />
 
-      {/* ─── Hero ─── */}
-      <section className="pt-28 pb-16 bg-hero-gradient relative overflow-hidden">
-        {/* Decorative blobs */}
-        <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-clara-200/30 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-clara-100/40 blur-3xl pointer-events-none" />
+      {/* ─── Hero Carousel ─── */}
+      <HeroCarousel />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block bg-clara-100 text-clara-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide">
-              ✨ Salon Kecantikan Terpercaya Malang
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-clara-900 leading-tight mb-5">
-              Cantik Alami,{' '}
-              <span className="text-clara-500">Sempurna</span>{' '}
-              Setiap Saat
-            </h1>
-            <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-              Percayakan kecantikanmu pada Clara Beauty Salon. Sulam alis microblading, facial brightening, perawatan rambut, dan manicure — semua dalam satu tempat.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                onClick={() => openWhatsApp('Halo Clara Beauty! Saya ingin booking treatment. Apa ada slot tersedia?')}
-                className="btn-whatsapp text-base px-8 py-3.5"
-              >
-                <span className="text-xl">💬</span>
-                Booking via WhatsApp
-              </button>
-              <Link to="/layanan" className="btn-outline text-base px-8 py-3.5">
-                Lihat Semua Layanan
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ─── Stats ─── */}
       <section className="py-12 bg-white border-b border-clara-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -100,7 +68,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Popular Services ─── */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="section-title">Layanan Unggulan</h2>

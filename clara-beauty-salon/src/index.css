@@ -83,3 +83,13 @@
 .animate-fade-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
+
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-progress {
+  animation: progress 5.5s linear forwards;
+}
+

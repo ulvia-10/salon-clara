@@ -13,6 +13,43 @@ const initialForm = {
   message: '',
 }
 
+const CONTACT_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  name: 'Clara Beauty Salon Malang',
+  image: 'https://claraabeautysalon.com/og-image.jpg',
+  telephone: '+6281553469549',
+  email: '[EMAIL_ADDRESS]',
+  url: 'https://claraabeautysalon.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Kecantikan No. 123',
+    addressLocality: 'Malang Selatan',
+    addressRegion: 'Jawa Timur',
+    postalCode: '65141',
+    addressCountry: 'ID',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -7.9797,
+    longitude: 112.6304,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday', 'Sunday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+}
+
 export default function Contact() {
   const [form, setForm] = useState(initialForm)
   const [loading, setLoading] = useState(false)
@@ -29,10 +66,6 @@ export default function Contact() {
     setError('')
 
     try {
-      // Kirim ke API jika backend tersedia
-      // await contactAPI.send(form)
-
-      // Fallback: arahkan ke WhatsApp dengan form data
       const service = SERVICES.find((s) => s.id === parseInt(form.service))
       const msg = [
         `Halo Clara Beauty! Saya ingin booking perawatan.`,
@@ -58,9 +91,15 @@ export default function Contact() {
   return (
     <>
       <SeoHead
-        title="Kontak & Booking Clara Beauty Salon Malang"
-        description="Hubungi Clara Beauty Salon untuk booking sulam alis, facial, dan perawatan lainnya. WhatsApp: 081553469549. Lokasi: Malang Selatan."
+        title="Kontak & Booking Sulam Alis, Facial Clara Beauty Salon Malang"
+        description="Hubungi & booking perawatan di Clara Beauty Salon Malang. Lokasi: Malang Selatan. Konsultasi gratis via WhatsApp: 081553469549."
+        keywords="kontak clara beauty salon, booking sulam alis malang, alamat salon kecantikan malang, whatsapp clara beauty"
         path="/kontak"
+        schemaData={CONTACT_SCHEMA}
+        breadcrumbs={[
+          { name: 'Beranda', path: '/' },
+          { name: 'Kontak', path: '/kontak' },
+        ]}
       />
 
       <div className="pt-24 pb-16">

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://claraabeautysalon.com
+
+# Sitemaps
+Sitemap: https://claraabeautysalon.com/sitemap.xml

@@ -40,13 +40,76 @@ const WHY_US = [
   },
 ]
 
+const HOME_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  name: 'Clara Beauty Salon',
+  alternateName: 'Clara Beauty Salon Malang',
+  description: 'Clara Beauty Salon - Spesialis sulam alis microblading, facial brightening, perawatan rambut, dan manicure profesional di Malang.',
+  url: 'https://claraabeautysalon.com',
+  telephone: '+6281553469549',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Kecantikan No. 123',
+    addressLocality: 'Malang Selatan',
+    addressRegion: 'Jawa Timur',
+    postalCode: '65141',
+    addressCountry: 'ID',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -7.9797,
+    longitude: 112.6304,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday', 'Sunday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '150',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Layanan Kecantikan Clara Beauty Salon Malang',
+    itemListElement: SERVICES.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.name,
+        description: s.description,
+      },
+      price: s.price,
+      priceCurrency: 'IDR',
+    })),
+  },
+  sameAs: [
+    'https://www.instagram.com/clarabeautysalon',
+    'https://www.facebook.com/clarabeautysalon',
+  ],
+}
+
 export default function Home() {
   return (
     <>
       <SeoHead
-        title="Clara Beauty Salon - Sulam Alis, Facial & Salon Profesional di Malang"
-        description="Clara Beauty Salon menawarkan layanan sulam alis microblading, facial brightening, dan salon lengkap di Malang. Terapis berpengalaman, hasil sempurna, harga terjangkau."
+        title="Clara Beauty Salon - Sulam Alis, Facial & Salon Profesional Malang"
+        description="Clara Beauty Salon menawarkan layanan sulam alis microblading, facial brightening, perawatan rambut, & manicure profesional di Malang. Terapis berpengalaman & harga terjangkau."
+        keywords="sulam alis malang, facial malang, salon kecantikan malang, microblading malang, facial brightening malang, potong rambut malang, clara beauty salon"
         path="/"
+        schemaData={HOME_SCHEMA}
       />
 
       {/* ─── Hero Carousel ─── */}

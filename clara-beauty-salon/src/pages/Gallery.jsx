@@ -50,7 +50,12 @@ export default function Gallery() {
       <SeoHead
         title="Galeri Hasil Perawatan & Transformasi Real - Clara Beauty Salon Malang"
         description="Lihat galeri foto hasil sulam alis microblading, facial brightening, keratin treatment, dan manicure gel di Clara Beauty Salon Malang. Transformasi nyata dari pelanggan kami."
+        keywords="galeri sulam alis malang, foto sebelum sesudah sulam alis, hasil facial malang, foto salon kecantikan malang"
         path="/galeri"
+        breadcrumbs={[
+          { name: 'Beranda', path: '/' },
+          { name: 'Galeri', path: '/galeri' },
+        ]}
       />
 
       <div className="pt-24 pb-16 bg-gradient-to-b from-clara-50/50 via-white to-clara-50/30">
